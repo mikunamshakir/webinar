@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Free Webinar: Introduction to Generative AI</title>
+<meta name="description" content="Free one-hour webinar introducing generative AI, hosted by M. Asim Shakir on Google Meet, Wed 07 Oct 2026, 6-7 PM.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+:root{
+  --navy-deep:#0a1830;
+  --navy-panel:#0c2549;
+  --navy-section:#081729;
+  --blue-label:#5fb8f2;
+  --blue-pill:#4fa3ea;
+  --dim:#a9c3e6;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+:root:not([data-theme="light"]){ }
+*{box-sizing:border-box; margin:0; padding:0;}
+html{scroll-padding-top: env(safe-area-inset-top, 0px);}
+img{max-width:100%;}
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--navy-section);
+  color:#fff;
+}
+
+/* ================= POSTER ================= */
+.poster-wrap{
+  display:flex;
+  justify-content:center;
+  padding:0 0 0;
+}
+.poster{
+  width:100%;
+  max-width:640px;
+  background:var(--navy-deep);
+  overflow:hidden;
+}
+
+.top{
+  position:relative;
+  aspect-ratio:5/4;
+  overflow:hidden;
+}
+.top img{
+  display:block;
+  width:100%; height:100%;
+  object-fit:cover;
+}
+.headline-box{
+  position:absolute;
+  top:8%; left:6%;
+  right:14%;
+  background:rgba(9,25,50,.72);
+  padding:1.1rem 1.3rem;
+}
+.headline-box .pre{
+  font-size:.95rem;
+  font-weight:400;
+  letter-spacing:.02em;
+  margin-bottom:.3rem;
+}
+.headline-box h1{
+  font-size:clamp(1.5rem, 5.5vw, 2.1rem);
+  font-weight:800;
+  line-height:1.15;
+  text-transform:uppercase;
+}
+
+.bottom{
+  background:var(--navy-panel);
+  padding:2rem 1.6rem 1.8rem;
+}
+.info-speaker{
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  margin-bottom:1.6rem;
+  flex-wrap:wrap;
+}
+.info{
+  display:flex;
+  flex-direction:column;
+  gap:1.3rem;
+}
+.info-row{
+  display:flex;
+  align-items:flex-start;
+  gap:.7rem;
+}
+.info-row svg{ flex-shrink:0; margin-top:2px; }
+.info-row .label{
+  font-size:.72rem;
+  font-weight:600;
+  letter-spacing:.06em;
+  color:var(--blue-label);
+  text-transform:uppercase;
+  margin-bottom:.15rem;
+}
+.info-row .value{
+  font-size:1.05rem;
+  font-weight:700;
+}
+
+.speaker-col{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  flex-shrink:0;
+}
+.speaker-photo{
+  width:112px; height:112px;
+  border-radius:50%;
+  border:3px solid var(--blue-pill);
+  overflow:hidden;
+  margin-bottom:.7rem;
+}
+.speaker-photo img{
+  display:block;
+  width:100%; height:100%;
+  object-fit:cover;
+}
+.speaker-col .role-label{
+  font-style:italic;
+  font-size:.92rem;
+  color:var(--blue-label);
+}
+.speaker-col .name{
+  font-weight:700;
+  font-size:1.05rem;
+  margin:.1rem 0 .05rem;
+}
+.speaker-col .role{
+  font-size:.85rem;
+  color:#cfe0f5;
+  line-height:1.3;
+}
+
+.register-btn{
+  display:inline-block;
+  background:var(--blue-pill);
+  color:var(--navy-deep);
+  font-weight:700;
+  font-size:1rem;
+  padding:.85rem 2.4rem;
+  border-radius:100px;
+  text-decoration:none;
+  text-align:center;
+  transition:transform .15s ease;
+}
+.register-btn:hover{ transform:translateY(-2px); }
+.register-btn:focus-visible{ outline:2px solid #fff; outline-offset:3px; }
+
+footer.poster-footer{
+  margin-top:2rem;
+  text-align:center;
+}
+footer.poster-footer .contact-label{
+  font-size:.9rem;
+  margin-bottom:.8rem;
+}
+.contact-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:.8rem;
+  border:1px solid #4a6a95;
+  border-radius:100px;
+  padding:.6rem 1.1rem;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.contact-pill a{
+  color:#fff;
+  text-decoration:none;
+}
+.contact-pill a:focus-visible{ outline:2px solid var(--blue-pill); outline-offset:2px; }
+.contact-pill span{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+  font-size:.85rem;
+}
+.contact-pill .divider{
+  width:1px; height:16px;
+  background:#4a6a95;
+}
+
+/* ================= ABOUT SECTION ================= */
+.about{
+  max-width:720px;
+  margin:0 auto;
+  padding:3.5rem 1.6rem 4rem;
+}
+.about h2{
+  font-size:clamp(1.4rem, 4vw, 1.8rem);
+  font-weight:700;
+  margin-bottom:1rem;
+}
+.about > p{
+  color:var(--dim);
+  font-size:1rem;
+  line-height:1.7;
+  margin-bottom:1.1rem;
+  max-width:65ch;
+}
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:2.2rem;
+  margin-top:2.2rem;
+}
+.about-block h3{
+  font-size:1.05rem;
+  font-weight:600;
+  color:var(--blue-label);
+  margin-bottom:.8rem;
+}
+.about-block ul{
+  list-style:none;
+  display:flex;
+  flex-direction:column;
+  gap:.7rem;
+}
+.about-block ul li{
+  display:flex;
+  gap:.7rem;
+  font-size:.95rem;
+  line-height:1.5;
+  color:#e7eefb;
+}
+.about-block ul li::before{
+  content:"";
+  flex-shrink:0;
+  width:6px; height:6px;
+  margin-top:.5rem;
+  border-radius:50%;
+  background:var(--blue-pill);
+}
+.about-block p{
+  font-size:.95rem;
+  line-height:1.6;
+  color:#e7eefb;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width:420px){
+  .info-speaker{ flex-direction:column; align-items:center; gap:1.6rem; }
+  .info{ width:100%; }
+  .contact-pill{ flex-direction:column; gap:.5rem; padding:.9rem 1.2rem; }
+  .contact-pill .divider{ display:none; }
+}
+
+@media (min-width:640px){
+  .poster{ box-shadow:0 30px 80px rgba(0,0,0,.45); margin:2.5rem 0; border-radius:14px; }
+  .top{ border-radius:14px 14px 0 0; }
+}
+
+@media (min-width:820px){
+  .about-grid{
+    grid-template-columns:1fr 1fr;
+    column-gap:2.6rem;
+  }
+  .about-block:first-child{ grid-column:1 / -1; }
+}
+
+@media (min-width:1024px){
+  .poster-wrap{ padding-top:2.5rem; }
+  .about{ padding-top:4.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .register-btn{ transition:none; }
+}
+</style>
+</head>
+<body>
+
+<div class="poster-wrap">
+<div class="poster">
+
+  <div class="top">
+    <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='512' viewBox='0 0 640 512'%3E%3Crect width='640' height='512' fill='%230f2c52'/%3E%3Ctext x='320' y='250' font-family='sans-serif' font-size='20' fill='%235fb8f2' text-anchor='middle'%3EHero image%3C/text%3E%3Ctext x='320' y='278' font-family='sans-serif' font-size='13' fill='%23a9c3e6' text-anchor='middle'%3EReplace this src — recommended 1600×1280%3C/text%3E%3C/svg%3E" alt="Placeholder — replace with your hero image">
+    <div class="headline-box">
+      <div class="pre">Free Webinar:</div>
+      <h1>Introduction to Generative AI</h1>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <div class="info-speaker">
+      <div class="info">
+        <div class="info-row">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+          <div>
+            <div class="label">Wednesday</div>
+            <div class="value">07 Oct 2026</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div>
+            <div class="label">Time</div>
+            <div class="value">6:00 PM–7:00 PM</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.6"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          <div>
+            <div class="label">Platform</div>
+            <div class="value">Google Meet</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="speaker-col">
+        <div class="speaker-photo">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='112' height='112' viewBox='0 0 112 112'%3E%3Crect width='112' height='112' fill='%2312315e'/%3E%3Ctext x='56' y='60' font-family='sans-serif' font-size='11' fill='%235fb8f2' text-anchor='middle'%3Ephoto%3C/text%3E%3C/svg%3E" alt="Placeholder — replace with speaker photo">
+        </div>
+        <div class="role-label">Speaker</div>
+        <div class="name">M. Asim Shakir</div>
+        <div class="role">Software Developer<br>AI &amp; ML Expert</div>
+      </div>
+    </div>
+
+    <a href="#" class="register-btn">Register Now</a>
+
+    <footer class="poster-footer">
+      <div class="contact-label">Contact Us For More Information:</div>
+      <div class="contact-pill">
+        <span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
+          <a href="mailto:info.optoengine@gmail.com">info.optoengine@gmail.com</a>
+        </span>
+        <div class="divider"></div>
+        <span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
+          <a href="https://www.webinar.vercel.app" target="_blank" rel="noopener">www.webinar.vercel.app</a>
+        </span>
+      </div>
+    </footer>
+  </div>
+
+</div>
+</div>
+
+<section class="about">
+  <h2>About this webinar</h2>
+  <p>Generative AI is reshaping how software gets built, how content gets created, and how people work day to day — but for many, it's still a black box. This free, one-hour session breaks down what generative AI actually is, how it works under the hood, and where it's already showing up in everyday tools.</p>
+  <p>No prior AI or machine learning background is required. Whether you're a student, a developer, or just curious about the technology behind tools like ChatGPT and image generators, this session is built to make the concepts clear and practical.</p>
+
+  <div class="about-grid">
+    <div class="about-block">
+      <h3>What you'll learn</h3>
+      <ul>
+        <li>What generative AI is, and how it's different from traditional software</li>
+        <li>The basics of how large language models are trained and generate output</li>
+        <li>Real-world applications across writing, code, and image generation</li>
+        <li>Where the technology is heading, and how to start exploring it yourself</li>
+      </ul>
+    </div>
+    <div class="about-block">
+      <h3>Format</h3>
+      <p>A live, one-hour session on Google Meet with a short presentation followed by open Q&amp;A — bring your questions.</p>
+    </div>
+    <div class="about-block">
+      <h3>Who it's for</h3>
+      <p>Anyone curious about AI: students, developers, educators, and professionals looking to understand generative AI before diving deeper into it.</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
