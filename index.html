@@ -37,7 +37,9 @@
 }
 :root:not([data-theme="light"]){ }
 *{box-sizing:border-box; margin:0; padding:0;}
-html{scroll-padding-top: env(safe-area-inset-top, 0px);}
+html{scroll-padding-top: env(safe-area-inset-top, 0px);
+    scroll-behaviour: smooth;
+    }
 img{max-width:100%;}
 body{
   font-family:'Poppins',sans-serif;
@@ -344,7 +346,7 @@ footer.poster-footer .contact-label{
       </div>
     </div>
 
-    <a href="#" class="register-btn">Register Now</a>
+    <a href="#formContainer" class="register-btn" onclick="formContainer.hidden^=1">Register Now</a>
 
     <footer class="poster-footer">
       <div class="contact-label">Contact Us For More Information:</div>
@@ -385,6 +387,9 @@ footer.poster-footer .contact-label{
       <p>Anyone curious about AI: students, developers, educators, and professionals looking to understand generative AI before diving deeper into it.</p>
     </div>
   </div>
+</section>
+<section id="formContainer" hidden>
+  <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScSkcMDqB1fYIVoGONUR3lYJq70-e4s_lb9p5zv5Msj7yoasw/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
 </section>
 
 </body>
